@@ -7,9 +7,13 @@ type ItemCardPropsType = {
 };
 
 const ItemCard: FC<ItemCardPropsType> = ({ item }) => {
+  const { category, inStock, name, price } = item;
   return (
     <div className={style["item-card"]}>
-      <h3>{item.name}</h3>
+      <h3>{name}</h3>
+      <p>Category: {category}</p>
+      <p>{inStock ? "In Stock" : "Out of stock"}</p>
+      <p>Price: ${price}</p>
     </div>
   );
 };

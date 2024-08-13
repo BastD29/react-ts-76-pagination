@@ -16,7 +16,6 @@ const ItemsList: FC = () => {
 
   return (
     <div className={style["items-list"]}>
-      <h2>Items list</h2>
       {items.map((item) => (
         <ItemCard key={item.id} item={item} />
       ))}
