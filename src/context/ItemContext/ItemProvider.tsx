@@ -9,7 +9,7 @@ type ItemProviderPropsType = {
 const ItemProvider: FC<ItemProviderPropsType> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log("state:", state);
+  console.log("items:", state.items);
 
   useEffect(() => {
     dispatch({ type: SET_ITEMS, payload: state.items });

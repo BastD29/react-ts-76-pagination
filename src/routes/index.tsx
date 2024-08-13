@@ -3,6 +3,7 @@ import Layout from "../components/Layout/Layout";
 import { Home, NotFound, Store } from "./routes";
 import { ItemProvider } from "../context/ItemContext/ItemProvider";
 import { PaginationProvider } from "../context/PaginationContext/PaginationProvider";
+import { FilterProvider } from "../context/FilterContext/FilterProvider";
 
 const routes: RouteObject[] = [
   {
@@ -15,7 +16,9 @@ const routes: RouteObject[] = [
         element: (
           <ItemProvider>
             <PaginationProvider>
-              <Store />
+              <FilterProvider>
+                <Store />
+              </FilterProvider>
             </PaginationProvider>
           </ItemProvider>
         ),

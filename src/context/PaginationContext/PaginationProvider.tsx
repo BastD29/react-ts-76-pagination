@@ -9,7 +9,7 @@ type PaginationProviderPropsType = {
 const PaginationProvider: FC<PaginationProviderPropsType> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log("state:", state);
+  console.log("pagination:", state.pagination);
 
   return (
     <PaginationContext.Provider value={{ state, dispatch }}>
