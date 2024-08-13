@@ -20,4 +20,4 @@ const ItemsList: FC = () => {
   );
 };
 
-export { ItemsList };
+export default ItemsList;

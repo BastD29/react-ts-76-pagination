@@ -38,4 +38,4 @@ const Pagination: FC = () => {
   );
 };
 
-export { Pagination };
+export default Pagination;
