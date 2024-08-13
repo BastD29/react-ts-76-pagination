@@ -15,7 +15,6 @@ const Filter: FC = () => {
       <div className={style["filter__filter"]}>
         <label htmlFor="price">Price</label>
         <input type="range" id="price" min="0" max="1200" />
-        {/* <span>{filters?.get("price") || ""}</span> */}
       </div>
       <div className={style["filter__filter"]}>
         <label htmlFor="category">Category</label>
