@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useItemContext } from "../../hooks/useItemContext";
-import { usePagination } from "../../hooks/usePagination";
+import { usePagination } from "../../hooks/usePagination2";
 import ItemCard from "../ItemCard/ItemCard";
 import style from "./ItemsList.module.scss";
 

@@ -13,11 +13,11 @@ const routes: RouteObject[] = [
       {
         path: "store",
         element: (
-          <PaginationProvider>
-            <ItemProvider>
+          <ItemProvider>
+            <PaginationProvider>
               <Store />
-            </ItemProvider>
-          </PaginationProvider>
+            </PaginationProvider>
+          </ItemProvider>
         ),
       },
     ],

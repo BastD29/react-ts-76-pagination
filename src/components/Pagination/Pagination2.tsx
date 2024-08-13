@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useItemContext } from "../../hooks/useItemContext";
-import { usePagination } from "../../hooks/usePagination";
+import { usePagination } from "../../hooks/usePagination2";
 import style from "./Pagination.module.scss";
 
 const Pagination: FC = () => {
