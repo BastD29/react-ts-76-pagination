@@ -13,7 +13,7 @@ const Pagination: FC = () => {
   const startIndex = (currentPage - 1) * limit;
   console.log("startIndex:", startIndex);
   const endIndex = startIndex + limit;
-  // const paginated
+  // const paginatedItems =
 
   const handlePageChange = (page: number) => {
     dispatch({ type: SET_CURRENT_PAGE, payload: page });
