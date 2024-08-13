@@ -6,8 +6,6 @@ type PaginationType = {
   limit: number;
 };
 
-// type PaginationType = URLSearchParams; ???
-
 type PaginationStateType = {
   pagination: PaginationType;
 };
