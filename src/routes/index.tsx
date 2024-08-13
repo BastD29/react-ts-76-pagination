@@ -2,6 +2,7 @@ import { RouteObject } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import { Home, NotFound, Store } from "./routes";
 import { ItemProvider } from "../context/ItemContext/ItemProvider";
+import { PaginationProvider } from "../context/PaginationContext/PaginationProvider";
 
 const routes: RouteObject[] = [
   {
@@ -12,9 +13,11 @@ const routes: RouteObject[] = [
       {
         path: "store",
         element: (
-          <ItemProvider>
-            <Store />
-          </ItemProvider>
+          <PaginationProvider>
+            <ItemProvider>
+              <Store />
+            </ItemProvider>
+          </PaginationProvider>
         ),
       },
     ],
