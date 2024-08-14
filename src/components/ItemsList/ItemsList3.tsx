@@ -1,9 +1,9 @@
-import { FC, useMemo } from "react";
+import { FC /* , useMemo */ } from "react";
 import { useItemContext } from "../../hooks/useItemContext";
 import { useFilterContext } from "../../hooks/useFilterContext";
 import { usePagination } from "../../hooks/usePagination2";
 import ItemCard from "../ItemCard/ItemCard";
-import { filterItems } from "../../utils/filterItems";
+// import { filterItems } from "../../utils/filterItems";
 import style from "./ItemsList.module.scss";
 
 const ItemsList: FC = () => {
@@ -22,12 +22,12 @@ const ItemsList: FC = () => {
   //   [paginatedItems, filters]
   // );
 
-  const filteredItems = useMemo(
-    () => filterItems(items, filters),
-    [items, filters]
-  );
+  // const filteredItems = useMemo(
+  //   () => filterItems(items, filters),
+  //   [items, filters]
+  // );
 
-  const { paginatedItems } = usePagination(filteredItems);
+  const { paginatedItems } = usePagination(items);
 
   return (
     <div className={style["items-list"]}>
