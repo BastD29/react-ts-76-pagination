@@ -1,5 +1,5 @@
 import { FC, ReactNode, useReducer } from "react";
-import { initialState, reducer } from "../../reducers/filter";
+import { initialState, reducer } from "../../reducers/filter2";
 import { FilterContext } from "./FilterContext";
 
 type FilterProviderPropsType = {

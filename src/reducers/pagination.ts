@@ -1,7 +1,6 @@
 import { SET_CURRENT_PAGE, SET_TOTAL_PAGES } from "../constants/actions";
 import { DEFAULT_ITEMS } from "../data/data";
 import { PaginationActionType, PaginationStateType } from "../types/pagination";
-// import { ITEMS_PER_PAGE } from "../utils/paginateItems";
 
 const ITEMS_PER_PAGE = 5;
 

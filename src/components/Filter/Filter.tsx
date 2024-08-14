@@ -1,30 +1,79 @@
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
+import { useFilterContext } from "../../hooks/useFilterContext";
+import { SET_FILTER } from "../../constants/actions";
 import style from "./Filter.module.scss";
 
 const Filter: FC = () => {
+  const {
+    dispatch,
+    state: { filters },
+  } = useFilterContext();
+
+  const handleFilter = (
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value, type } = event.target;
+
+    if (type === "checkbox") {
+      const target = event.target as HTMLInputElement;
+      dispatch({
+        type: SET_FILTER,
+        payload: { name: name, value: target.checked.toString() },
+      });
+    } else {
+      dispatch({
+        type: SET_FILTER,
+        payload: { name: name, value },
+      });
+    }
+  };
+
   return (
     <div className={style["filter"]}>
       <div className={style["filter__filter"]}>
         <label htmlFor="name">Name</label>
-        <input type="search" id="name" placeholder="Name" />
+        <input
+          type="search"
+          name="name"
+          placeholder="Name"
+          onChange={handleFilter}
+          value={filters.name || ""}
+        />
       </div>
       <div className={style["filter__filter"]}>
         <label htmlFor="inStock">In stock</label>
-        <input type="checkbox" id="inStock" />
+        <input
+          type="checkbox"
+          name="inStock"
+          onChange={handleFilter}
+          checked={filters.inStock === "true"}
+        />
       </div>
       <div className={style["filter__filter"]}>
         <label htmlFor="price">Price</label>
-        <input type="range" id="price" min="0" max="1200" />
+        <input
+          type="range"
+          name="price"
+          min="0"
+          max="1200"
+          onChange={handleFilter}
+          value={filters.price || ""}
+        />
+        <span>{filters.price || ""}</span>
       </div>
       <div className={style["filter__filter"]}>
         <label htmlFor="category">Category</label>
-        <select name="category" id="category">
+        <select
+          name="category"
+          onChange={handleFilter}
+          value={filters.category || ""}
+        >
           <option value="">All Categories</option>
-          <option value="electronics">Electronics</option>
-          <option value="literature">Literature</option>
-          <option value="transportation">Transportation</option>
-          <option value="accessories">Accessories</option>
-          <option value="kitchenware">Kitchenware</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Literature">Literature</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Kitchenware">Kitchenware</option>
         </select>
       </div>
     </div>

@@ -13,6 +13,7 @@ type FilterStateType = {
 type SetFilterActionType = {
   type: typeof SET_FILTER;
   payload: FilterType;
+  // payload: { name: string; value: string };
 };
 
 type ClearFilterActionType = {
