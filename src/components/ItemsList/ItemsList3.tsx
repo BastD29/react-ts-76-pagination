@@ -1,7 +1,7 @@
 import { FC /* , useMemo */ } from "react";
 import { useItemContext } from "../../hooks/useItemContext";
-import { useFilterContext } from "../../hooks/useFilterContext";
-import { usePagination } from "../../hooks/usePagination2";
+// import { useFilterContext } from "../../hooks/useFilterContext";
+import { usePagination } from "../../hooks/usePagination3";
 import ItemCard from "../ItemCard/ItemCard";
 // import { filterItems } from "../../utils/filterItems";
 import style from "./ItemsList.module.scss";
@@ -11,11 +11,11 @@ const ItemsList: FC = () => {
     state: { items },
   } = useItemContext();
 
-  const {
-    state: { filters },
-  } = useFilterContext();
+  // const {
+  //   state: { filters },
+  // } = useFilterContext();
 
-  console.log("filters:", filters);
+  // console.log("filters:", filters);
 
   // const filteredItems = useMemo(
   //   () => filterItems(paginatedItems, filters),
